@@ -9,9 +9,9 @@ require 'faker'
 
 puts "Clearing old data"
 
-Item.destroy_all
-Cart.destroy_all
 CartItem.destroy_all
+Cart.destroy_all
+Item.destroy_all
 
 puts "Creating new data"
 
