@@ -1,11 +1,12 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i(show, update, destroy)
+  before_action :set_item, only: %i[show update destroy]
 
   def index
     @items = Item.all
   end
 
   def show
+
   end
 
   def create
