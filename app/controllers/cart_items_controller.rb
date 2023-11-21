@@ -8,6 +8,8 @@ class CartItemsController < ApplicationController
   def create
     @item = Item.find(params[:item_id])
     @cart_item = @cart.cart_items.build(cart_item_params)
+    @cart_item.item = @item
+    @cart_item.quantity = cart_item_params[:quantity].to_i
 
     if @cart_item.save
       redirect_to cart_path(@cart), notice: 'Item added to cart successfully.'
@@ -23,6 +25,6 @@ class CartItemsController < ApplicationController
   end
 
   def cart_item_params
-    params.require(:cart_item).permit(:item_id, :quantity)
+    params.require(:cart_item).permit(:quantity)
   end
 end
