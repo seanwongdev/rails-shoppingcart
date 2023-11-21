@@ -1,19 +1,19 @@
-<%= simple_form_for(item) do |f| %>
+<%= simple_form_for(item, url: admin_items_path) do |f| %>
 
   <%= f.input :name,
     label: "Name of item",
     label_html: { class: "" },
-    placeholder: "eg. Title of Book",
+    placeholder: "eg. Wakeboard Name",
     input_html: { class: "" } %>
   <%= f.input :description,
     label: "Give a short description of the item",
     label_html: { class: ""},
-    placeholder: "eg. This is a very engaging read",
+    placeholder: "eg. This is board suitable for beginners...",
     input_html: { class: "" } %>
   <%= f.input :price,
     label: "Price of item",
     label_html: { class: ""},
-    placeholder: "eg. 32.39",
+    placeholder: "eg. 889",
     input_html: { class: "" } %>
 
   <%= f.button :submit, 'Submit', class: "btn btn-success mt-2" %>

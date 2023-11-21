@@ -97,3 +97,8 @@ item_10 = Item.create!(
 )
 
 puts "Created item 10"
+
+cart_1 = Cart.create!{
+}
+
+puts 'Cart created'
