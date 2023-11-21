@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+puts "Clearing old data"
+
+Item.destroy_all
+Cart.destroy_all
+CartItem.destroy_all
+
+puts "Creating new data"
+
+10.times do
+  Item.create!(
+    name: Faker::Book.title,
+    description: Faker::Lorem.sentence,
+    price: Faker::Commerce.price(range: 10.0..100.0, as_string: true)
+  )
+end
+
+puts "items created"
