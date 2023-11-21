@@ -1,6 +1,7 @@
 # Getting started with Ruby on Rails
 Install necessary files: "yarn && bundle"
 Migrate database: "rails db:migrate"
+activate Seeds file to add 10 shopping items: "rails db:seed"
 Start localhost: "rails s"
 
 ## Schema
