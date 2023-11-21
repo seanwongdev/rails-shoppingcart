@@ -6,7 +6,8 @@
   </div>
 
   <div class="homecontainer">
-    <h2>How to be a part of our family:</h2>
+    <h2 class="py-2">How to be a part of our family:</h2>
+
     <div class="cards">
       <div class="card" id="sessions">
         <h3>Sessions</h3>
@@ -19,10 +20,12 @@
         <p>We have a team of <strong>friendly instructors</strong> to assist you</p>
       </div>
 
-      <div class="card" id="purchase">
-        <h3>Purchase</h3>
-        <p>Own your own board and <strong>flaunt</strong> those tricks to your friends!</p>
-      </div>
+      <%= link_to items_path, {class: "card", id: "purchase"} do %>
+
+          <h3>Purchase</h3>
+          <p>Own your own board and <strong>flaunt</strong> those tricks to your friends!</p>
+
+      <% end %>
     </div>
   </div>
 
