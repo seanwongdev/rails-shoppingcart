@@ -6,6 +6,7 @@ class CartItemsController < ApplicationController
   end
 
   def create
+    @item = Item.find(params[:item_id])
     @cart_item = @cart.cart_items.build(cart_item_params)
 
     if @cart_item.save
