@@ -19,8 +19,8 @@ class Admin::ItemsController < ApplicationController
   end
 
   def update
-    if @edit.update(item_params)
-      redirect_to @item
+    if @item.update(item_params)
+      redirect_to items_path
     else
       render :edit, status: :unprocessable_entity
     end
