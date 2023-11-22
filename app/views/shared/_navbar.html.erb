@@ -1,0 +1,8 @@
+<div class="container d-flex justify-content-between align-items-center">
+  <i class="fa-solid fa-bars"></i>
+  <h1>Wake 4 Life</h1>
+  <%= link_to 'Admin Login', admin_sessions_new_path %>
+  <% if session[:admin] %>
+    <%= button_to 'Admin Logout', logout_admin_path, method: :delete %>
+  <% end %>
+</div>
