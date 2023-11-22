@@ -7,13 +7,25 @@ class CartItemsController < ApplicationController
 
   def create
     @item = Item.find(params[:item_id])
-    @cart_item = @cart.cart_items.build(cart_item_params)
+    @cart_item = @cart.cart_items.find_by(item: @item)
+
+    if @cart_item
+      @cart_item.update(quantity: @cart_item.quantity + params[:cart_item][:quantity].to_i)
+    else
+      @cart_item = @cart.cart_items.build(cart_item_params.merge(item: @item))
+    end
 
     if @cart_item.save
-      redirect_to cart_path(@cart), notice: 'Item added to cart successfully.'
+      redirect_to item_path(@item), notice: 'Item added to cart successfully.'
     else
       render 'items/show', alert: 'Failed to add item to cart.'
     end
+  end
+
+  def destroy
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.destroy
+    redirect_to cart_path(@cart), notice: 'Item removed from cart.'
   end
 
   private
@@ -23,6 +35,6 @@ class CartItemsController < ApplicationController
   end
 
   def cart_item_params
-    params.require(:cart_item).permit(:item_id, :quantity)
+    params.require(:cart_item).permit(:quantity)
   end
 end

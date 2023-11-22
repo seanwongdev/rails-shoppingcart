@@ -9,6 +9,8 @@ class ItemsController < ApplicationController
     @cart = Cart.first
   end
 
+
+
   private
 
   def set_item

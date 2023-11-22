@@ -1,2 +1,39 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+    <div class="homecontainer">
+      <h1>Work hard, Play hard</h1>
+      <p>Over here, we don't forget to have fun amidst the hustle and bustle of life</p>
+    </div>
+  </div>
+
+  <div class="homecontainer">
+    <h2 class="py-2">How to be a part of our family:</h2>
+
+    <div class="cards">
+      <div class="card" id="sessions">
+        <h3>Sessions</h3>
+        <p>Join us at our locations for a <strong>smashing wake-time</strong> today!</p>
+      </div>
+
+      <div class="card" id="learn-to-wake">
+        <h3>Learn to wake</h3>
+        <p>New to wakeboarding? </p>
+        <p>We have a team of <strong>friendly instructors</strong> to assist you</p>
+      </div>
+
+      <%= link_to items_path, {class: "card", id: "purchase"} do %>
+
+          <h3>Purchase</h3>
+          <p>Own your own board and <strong>flaunt</strong> those tricks to your friends!</p>
+
+      <% end %>
+    </div>
+  </div>
+
+  <div class="footers" style="background-image: linear-gradient(to bottom, rgba(50,50,50,0.9),rgba(50,50,50,0.9))">
+    <ul>
+      <li class="footer"><i class="fa-brands fa-twitter"></i></li>
+      <li class="footer"><i class="fa-brands fa-facebook"></i></li>
+      <li class="footer"><i class="fa-brands fa-instagram"></i></li>
+
+    </ul>
+  </div>
