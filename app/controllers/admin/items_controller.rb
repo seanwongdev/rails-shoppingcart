@@ -1,5 +1,5 @@
 class Admin::ItemsController < ApplicationController
-  http_basic_authenticate_with name: 'admin', password: 'password'
+  before_action :require_admin
   before_action :set_item, only: %i[ edit update destroy]
 
   def new
@@ -40,4 +40,9 @@ class Admin::ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :price, :description)
   end
+
+  def require_admin
+    redirect_to admin_sessions_new_path unless session[:admin]
+  end
+
 end
