@@ -1,4 +1,5 @@
-<h2>Admin Login</h2>
+<div class="container">
+<h2 class="p-2">Admin Login</h2>
 
 <%= form_tag admin_sessions_path, method: :post do %>
   <div>
@@ -6,10 +7,12 @@
     <%= text_field_tag :username %>
   </div>
 
-  <div>
-    <%= label_tag :password %>
+  <div class="my-2">
+    <%= label_tag :password, 'Password', class:"me-1" %>
     <%= password_field_tag :password %>
   </div>
 
-  <%= submit_tag 'Login' %>
+  <%= submit_tag 'Login', class: "my-2" %>
 <% end %>
+
+</div>

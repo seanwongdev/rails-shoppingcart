@@ -16,7 +16,7 @@ class CartItemsController < ApplicationController
     end
 
     if @cart_item.save
-      redirect_to cart_path(@cart), notice: 'Item added to cart successfully.'
+      redirect_to item_path(@item), notice: 'Item added to cart successfully.'
     else
       render 'items/show', alert: 'Failed to add item to cart.'
     end

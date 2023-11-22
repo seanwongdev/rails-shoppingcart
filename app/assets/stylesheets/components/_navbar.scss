@@ -1,6 +1,14 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar-brand {
+  margin-right: 0px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +17,54 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+
+.rounded-top-right {
+  border-top-right-radius: 12px; /* Adjust the radius as needed */
+}
+
+.navbar {
+  padding-bottom: 0;
+  z-index: 2;
+}
+
+.navbar-rectangle {
+  // background-color: #1D1F24;
+
+  padding: 10px 15px;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.nav-button {
+  text-decoration: none;
+  font-size: 0.625rem;
+  color: #676D75;
+}
+
+.nav-icon {
+  font-size: 30px;
+}
+
+.offcanvas-options {
+  color: #787B8D;
+}
+
+.is-active {
+  color: white !important;
+}
+
+.navbar-topics-link {
+  text-decoration: none;
+  color: #787B8D;
+
+  &:hover {
+    color: white;
+  }
 }
