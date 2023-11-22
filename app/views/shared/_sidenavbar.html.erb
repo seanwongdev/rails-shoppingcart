@@ -1,27 +1,10 @@
 
-
-
-  <%# Section below is code pertaining to drawer/offcanvas %>
-
-  <div class="offcanvas offcanvas-start text-bg-primary rounded-top-right" tabindex="-1" id="offcanvasDark" aria-labelledby="offcanvasDarkLabel" style="width: 300px;">
-    <div class="offcanvas-header">
-
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div>
-        <div class="container d-flex flex-column" style="height: 85vh;">
-          <div class="mb-3 offcanvas-options">
-            <%= link_to 'Log in', admin_sessions_new_path, class: "navbar-topics-link" %>
-          </div>
-
-          <% if session[:admin] %>
-            <%= link_to "Log out", admin_logout_path, data: {turbo_method: :delete}, class: "dropdown-item navbar-topics-link" %>
-          <% end %>
-
-
-
-        </div>
-
-
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
+  <div class="offcanvas-body">
+    <p>Try scrolling the rest of the page to see this option in action.</p>
+  </div>
+</div>
